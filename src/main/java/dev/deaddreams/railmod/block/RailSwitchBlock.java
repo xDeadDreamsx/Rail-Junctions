@@ -1,3 +1,10 @@
+/*
+ * SPDX-License-Identifier: LGPL-3.0-only
+ *
+ * Adapted/reimplemented for Rail Mod from the rail-switch behavior in Little Logistics.
+ * Modified for Fabric / Minecraft 26.2 on 2026-09-07.
+ * See THIRD_PARTY.md for attribution and upstream licensing details.
+ */
 package dev.deaddreams.railmod.block;
 
 import com.mojang.serialization.MapCodec;
