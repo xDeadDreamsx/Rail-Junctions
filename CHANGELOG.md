@@ -1,10 +1,20 @@
 # Changelog
 
-All notable changes to Rail Mod are documented here.
+All notable changes to Rail Junctions are documented here.
+
+## 1.0.5
+
+- Renamed the public-facing project from **Rail Mod** to **Rail Junctions**.
+- Kept the internal mod ID `railmod` unchanged for save, registry, recipe, and resource-pack compatibility.
+- Renamed release artifacts to `rail-junctions-<version>.jar`.
+- Finalized public-release documentation and Modrinth publishing metadata.
+- Added exact upstream reference commits to the third-party attribution notes.
+- Confirmed the referenced Useful Railroads 1.21.1 repository root has no separate upstream `NOTICE` file beyond its `LICENSE`.
+- No gameplay, recipe, registry, world-data, or rendering behavior changed from 1.0.4.
 
 ## 1.0.4
 
-- Prepared the project for public distribution.
+- Prepared the project for public distribution under its former working title **Rail Mod**.
 - Added LGPL-3.0-only project licensing and the incorporated GPLv3 text.
 - Added detailed Little Logistics, Useful Railroads, and RAY's 3D Rails attribution/compatibility notices.
 - Added the Useful Railroads Apache-2.0 license to the distribution.
@@ -24,7 +34,7 @@ All notable changes to Rail Mod are documented here.
 
 - Updated all crafting recipe ingredient JSON to the Minecraft 26.2 format.
 - Fixed recipes being silently skipped by Minecraft's recipe manager.
-- Added CI detection for Rail Mod recipe/data parsing failures.
+- Added CI detection for Rail Junctions recipe/data parsing failures.
 
 ## 1.0.1
 
@@ -33,7 +43,7 @@ All notable changes to Rail Mod are documented here.
 
 ## 1.0.0
 
-- First stable feature release for Fabric / Minecraft 26.2.
+- First stable feature release for Fabric / Minecraft 26.2 under the original working title Rail Mod.
 - Added Rail Cross, Dead End, Rail Switch, and Tee Junction Rail.
 - Added minecart routing/stop logic for custom rails.
 - Added stopping before incorrectly aligned Rail Switch and Tee Junction routes.
