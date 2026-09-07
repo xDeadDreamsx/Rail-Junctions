@@ -1,6 +1,6 @@
 # Rail Junctions
 
-[![Build](https://github.com/xDeadDreamsx/Rail-Mod/actions/workflows/build.yml/badge.svg)](https://github.com/xDeadDreamsx/Rail-Mod/actions/workflows/build.yml)
+[![Build](https://github.com/xDeadDreamsx/Rail-Junctions/actions/workflows/build.yml/badge.svg)](https://github.com/xDeadDreamsx/Rail-Junctions/actions/workflows/build.yml)
 
 **Rail Junctions** is a small standalone Fabric mod for **Minecraft Java Edition 26.2** that adds four functional vanilla-style rail pieces without requiring Little Logistics, Useful Railroads, or U-Team-Core at runtime.
 
@@ -123,7 +123,7 @@ Rail Junctions is an independent third-party project. It is not an official port
 
 Bug reports and compatibility issues can be opened on the GitHub issue tracker:
 
-https://github.com/xDeadDreamsx/Rail-Mod/issues
+https://github.com/xDeadDreamsx/Rail-Junctions/issues
 
 ## Publishing information
 
