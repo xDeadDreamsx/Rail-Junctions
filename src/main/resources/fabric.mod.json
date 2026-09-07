@@ -3,11 +3,13 @@
   "id": "railmod",
   "version": "${version}",
   "name": "Rail Mod",
-  "description": "Four standalone functional rail blocks for Fabric 26.2, with RAYs 3D Rails compatibility.",
+  "description": "Four standalone functional rail blocks for Fabric 26.2 with optional RAY's 3D Rails compatibility.",
   "authors": [
     "xDeadDreamsx"
   ],
   "contact": {
+    "homepage": "https://github.com/xDeadDreamsx/Rail-Mod",
+    "issues": "https://github.com/xDeadDreamsx/Rail-Mod/issues",
     "sources": "https://github.com/xDeadDreamsx/Rail-Mod"
   },
   "license": "LGPL-3.0-only",
