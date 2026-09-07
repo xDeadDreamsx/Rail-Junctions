@@ -12,8 +12,8 @@ This file contains the recommended values for the first public Modrinth publicat
 - **Client side:** Required
 - **Server side:** Required
 - **License:** LGPL-3.0-only
-- **Source code:** https://github.com/xDeadDreamsx/Rail-Mod
-- **Issue tracker:** https://github.com/xDeadDreamsx/Rail-Mod/issues
+- **Source code:** https://github.com/xDeadDreamsx/Rail-Junctions
+- **Issue tracker:** https://github.com/xDeadDreamsx/Rail-Junctions/issues
 
 ## First public version
 
@@ -94,7 +94,7 @@ Parts of the rail behavior are adapted/reimplemented from:
 No original Little Logistics or Useful Railroads art assets are bundled. No RAY's 3D Rails assets are bundled or redistributed.
 
 Full source, license texts, attribution, upstream references, and modification notes are available in the GitHub repository:
-https://github.com/xDeadDreamsx/Rail-Mod
+https://github.com/xDeadDreamsx/Rail-Junctions
 
 See in particular `LICENSE`, `COPYING`, `NOTICE`, and `THIRD_PARTY.md`.
 
