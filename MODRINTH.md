@@ -17,12 +17,12 @@ This file contains the recommended values for the first public Modrinth publicat
 
 ## First public version
 
-- **Version name:** Rail Junctions 1.0.5
-- **Version number:** `1.0.5`
+- **Version name:** Rail Junctions 1.0.0
+- **Version number:** `1.0.0`
 - **Version type:** Release
 - **Game version:** Minecraft Java Edition 26.2
 - **Loader:** Fabric
-- **Primary file:** `rail-junctions-1.0.5.jar`
+- **Primary file:** `rail-junctions-1.0.0.jar`
 
 ## Dependencies
 
@@ -77,7 +77,7 @@ All four blocks use standard vanilla crafting recipes and unlock in the vanilla 
 
 ## Visuals and RAY's 3D Rails compatibility
 
-Rail Junctions includes lightweight fallback models using vanilla texture references. The fallback Dead End uses an oak-plank upper crossbar and a dedicated inventory/hotbar presentation that shows the buffer stop together with the approach track more clearly.
+Rail Junctions includes lightweight fallback models using vanilla texture references. The fallback Dead End uses an oak-plank upper crossbar, cleanly separated metal supports, and a flatter front-facing inventory/hotbar icon designed to stay closer to Minecraft's vanilla 2D item style.
 
 Rail Junctions is also optionally compatible with **RAY's 3D Rails**. When that resource pack is installed, its supported 3D models replace the corresponding fallback models.
 
@@ -106,18 +106,18 @@ See in particular `LICENSE`, `COPYING`, `NOTICE`, and `THIRD_PARTY.md`.
 
 Rail Junctions is an independent third-party project. It is not an official port and is not affiliated with or endorsed by Little Logistics, Useful Railroads/U-Team, RAY's 3D Rails, Mojang, or Microsoft.
 
-## Recommended 1.0.5 version changelog
+## Recommended 1.0.0 version changelog
 
-### Rail Junctions 1.0.5
+### Rail Junctions 1.0.0
 
-First public-ready release under the **Rail Junctions** name.
+First public release of **Rail Junctions**.
 
 - Adds Rail Cross, Dead End, Rail Switch, and Tee Junction Rail.
 - Includes working minecart routing/stopping behavior for all four custom rails.
 - Stops minecarts before incorrectly aligned Switch/Tee routes.
 - Includes vanilla-style fallback models and item icons.
-- Gives the fallback Dead End an oak-plank upper crossbar.
-- Improves the Dead End inventory/hotbar view so the buffer stop and approach track are easier to recognize.
+- Gives the fallback Dead End an oak-plank upper crossbar with metal supports that no longer overlap it.
+- Uses a flatter, front-facing Dead End inventory/hotbar icon that fills the slot more clearly and stays closer to vanilla 2D item styling.
 - Supports the separately installed RAY's 3D Rails resource pack.
 - Includes standard vanilla crafting recipes and recipe-book unlocks.
 - Uses the stable internal mod ID `railmod` for compatibility with existing worlds and resources.
@@ -132,11 +132,11 @@ First public-ready release under the **Rail Junctions** name.
 
 Before clicking Publish on Modrinth:
 
-1. Upload `rail-junctions-1.0.5.jar` as the primary file.
+1. Upload `rail-junctions-1.0.0.jar` as the primary file.
 2. Select Minecraft 26.2 and Fabric.
 3. Mark Fabric API as a required dependency.
 4. Optionally add RAY's 3D Rails as an optional dependency/resource-pack relation.
 5. Select LGPL-3.0-only as the project license.
 6. Add the GitHub source and issue-tracker links above.
-7. Paste the project description and 1.0.5 changelog from this file.
+7. Paste the project description and 1.0.0 changelog from this file.
 8. Do not mark Little Logistics, Useful Railroads, U-Team-Core, or JEI as required dependencies.
