@@ -31,7 +31,7 @@ jobs:
       - name: Verify distribution metadata
         shell: bash
         run: |
-          MOD_JAR=$(find build/libs -maxdepth 1 -type f -name 'rail-mod-*.jar' ! -name '*-sources.jar' | head -n 1)
+          MOD_JAR=$(find build/libs -maxdepth 1 -type f -name 'rail-junctions-*.jar' ! -name '*-sources.jar' | head -n 1)
           if [ -z "$MOD_JAR" ]; then
             echo 'Main mod JAR not found'
             exit 1
@@ -55,6 +55,11 @@ jobs:
             exit 1
           fi
 
+          if ! unzip -p "$MOD_JAR" fabric.mod.json | grep -Fq '"name": "Rail Junctions"'; then
+            echo 'fabric.mod.json does not declare the public Rail Junctions name'
+            exit 1
+          fi
+
       - name: Minecraft bootstrap smoke test
         shell: bash
         run: |
@@ -72,7 +77,7 @@ jobs:
           fi
 
           if grep -Eq "Couldn't parse data file 'railmod:|Failed to parse.*railmod:|Error loading recipe.*railmod:" smoke-test.log; then
-            echo 'Rail Mod data/recipe parsing failure detected'
+            echo 'Rail Junctions data/recipe parsing failure detected'
             exit 1
           fi
 
@@ -90,6 +95,6 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: rail-mod-26.2
-          path: build/libs/rail-mod-*.jar
+          name: rail-junctions-26.2
+          path: build/libs/rail-junctions-*.jar
           if-no-files-found: error
