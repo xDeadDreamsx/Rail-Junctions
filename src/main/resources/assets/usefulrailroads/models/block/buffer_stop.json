@@ -17,7 +17,7 @@
     },
     {
       "from": [2, 1, 1],
-      "to": [4, 10, 3],
+      "to": [4, 8, 3],
       "faces": {
         "north": { "texture": "#iron" },
         "east": { "texture": "#iron" },
@@ -28,7 +28,7 @@
     },
     {
       "from": [12, 1, 1],
-      "to": [14, 10, 3],
+      "to": [14, 8, 3],
       "faces": {
         "north": { "texture": "#iron" },
         "east": { "texture": "#iron" },
