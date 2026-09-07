@@ -28,6 +28,32 @@ jobs:
       - name: Build
         run: gradle build --stacktrace
 
+      - name: Minecraft bootstrap smoke test
+        shell: bash
+        run: |
+          mkdir -p run
+          echo 'eula=true' > run/eula.txt
+          set +e
+          timeout 90s gradle runServer --args='nogui' > smoke-test.log 2>&1
+          code=$?
+          set -e
+          cat smoke-test.log
+
+          if grep -Eq 'MixinApplyError|InvalidMixinException|MixinTransformerError|IllegalClassLoadError|BootstrapMethodError' smoke-test.log; then
+            echo 'Mixin/bootstrap failure detected'
+            exit 1
+          fi
+
+          if [ "$code" -ne 0 ] && [ "$code" -ne 124 ]; then
+            echo "Server smoke test exited with code $code"
+            exit "$code"
+          fi
+
+          if ! grep -Eq 'Done \(|For help, type "help"' smoke-test.log; then
+            echo 'Server did not reach a successful startup state'
+            exit 1
+          fi
+
       - name: Upload mod jar
         if: success()
         uses: actions/upload-artifact@v4
