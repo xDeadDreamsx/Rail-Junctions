@@ -44,6 +44,11 @@ jobs:
             exit 1
           fi
 
+          if grep -Eq "Couldn't parse data file 'railmod:|Failed to parse.*railmod:|Error loading recipe.*railmod:" smoke-test.log; then
+            echo 'Rail Mod data/recipe parsing failure detected'
+            exit 1
+          fi
+
           if [ "$code" -ne 0 ] && [ "$code" -ne 124 ]; then
             echo "Server smoke test exited with code $code"
             exit "$code"
