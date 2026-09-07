@@ -12,6 +12,6 @@ public final class RailMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.initialize();
-        LOGGER.info("Rail Mod initialized.");
+        LOGGER.info("Rail Junctions initialized.");
     }
 }
