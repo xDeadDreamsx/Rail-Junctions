@@ -1,10 +1,66 @@
 {
-  "parent": "usefulrailroads:item/buffer_stop",
+  "ambientocclusion": false,
+  "gui_light": "front",
+  "textures": {
+    "iron": "minecraft:block/iron_block",
+    "wood": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/iron_block"
+  },
+  "elements": [
+    {
+      "from": [1, 13, 7.5],
+      "to": [15, 15, 8.5],
+      "faces": {
+        "north": { "texture": "#wood" },
+        "south": { "texture": "#wood" }
+      }
+    },
+    {
+      "from": [2, 3, 7.5],
+      "to": [3, 13, 8.5],
+      "faces": {
+        "north": { "texture": "#iron" },
+        "south": { "texture": "#iron" }
+      }
+    },
+    {
+      "from": [13, 3, 7.5],
+      "to": [14, 13, 8.5],
+      "faces": {
+        "north": { "texture": "#iron" },
+        "south": { "texture": "#iron" }
+      }
+    },
+    {
+      "from": [3, 9.5, 7.6],
+      "to": [13, 10.4, 8.4],
+      "faces": {
+        "north": { "texture": "#wood" },
+        "south": { "texture": "#wood" }
+      }
+    },
+    {
+      "from": [3, 6.5, 7.6],
+      "to": [13, 7.4, 8.4],
+      "faces": {
+        "north": { "texture": "#wood" },
+        "south": { "texture": "#wood" }
+      }
+    },
+    {
+      "from": [3, 3.5, 7.6],
+      "to": [13, 4.4, 8.4],
+      "faces": {
+        "north": { "texture": "#wood" },
+        "south": { "texture": "#wood" }
+      }
+    }
+  ],
   "display": {
     "gui": {
-      "rotation": [35, 180, 0],
-      "translation": [0, -0.5, 0],
-      "scale": [0.78, 0.78, 0.78]
+      "rotation": [0, 180, 0],
+      "translation": [0, 0, 0],
+      "scale": [1.0, 1.0, 1.0]
     }
   }
 }
