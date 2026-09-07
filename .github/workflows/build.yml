@@ -28,6 +28,33 @@ jobs:
       - name: Build
         run: gradle build --stacktrace
 
+      - name: Verify distribution metadata
+        shell: bash
+        run: |
+          MOD_JAR=$(find build/libs -maxdepth 1 -type f -name 'rail-mod-*.jar' ! -name '*-sources.jar' | head -n 1)
+          if [ -z "$MOD_JAR" ]; then
+            echo 'Main mod JAR not found'
+            exit 1
+          fi
+
+          echo "Checking $MOD_JAR"
+          for entry in \
+            META-INF/LICENSE_railmod \
+            META-INF/COPYING_railmod \
+            META-INF/NOTICE_railmod \
+            META-INF/THIRD_PARTY_railmod.md \
+            META-INF/THIRD_PARTY_LICENSES/Useful-Railroads-Apache-2.0.txt; do
+            if ! unzip -Z1 "$MOD_JAR" | grep -Fxq "$entry"; then
+              echo "Missing distribution file: $entry"
+              exit 1
+            fi
+          done
+
+          if ! unzip -p "$MOD_JAR" fabric.mod.json | grep -Fq '"license": "LGPL-3.0-only"'; then
+            echo 'fabric.mod.json does not declare LGPL-3.0-only'
+            exit 1
+          fi
+
       - name: Minecraft bootstrap smoke test
         shell: bash
         run: |
