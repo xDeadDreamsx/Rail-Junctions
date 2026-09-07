@@ -75,12 +75,18 @@ All four blocks use standard vanilla crafting recipes and unlock in the vanilla 
 - **Rail Switch:** 4 vanilla Rails → 4 Rail Switches
 - **Tee Junction Rail:** 4 vanilla Rails → 4 Tee Junction Rails
 
-## RAY's 3D Rails compatibility
+## Visuals and RAY's 3D Rails compatibility
 
-Rail Junctions includes lightweight fallback models using vanilla texture references and is optionally compatible with **RAY's 3D Rails**. When that resource pack is installed, its supported 3D models replace the fallback models.
+Rail Junctions includes lightweight fallback models using vanilla texture references. The fallback Dead End uses an oak-plank upper crossbar and a dedicated inventory/hotbar presentation that shows the buffer stop together with the approach track more clearly.
+
+Rail Junctions is also optionally compatible with **RAY's 3D Rails**. When that resource pack is installed, its supported 3D models replace the corresponding fallback models.
 
 RAY's 3D Rails is a separate project and is not bundled with Rail Junctions:
 https://modrinth.com/resourcepack/rays-3d-rails
+
+## Planned visual polish
+
+The mod is functionally complete for its first public release, but the held-item positioning of some 3D rail pieces is still being polished, especially in first-person and third-person views. This is a visual issue only and does not affect placement, crafting, or minecart behavior. A future update is planned to refine these hand positions.
 
 ## Open source, licensing and attribution
 
@@ -110,10 +116,13 @@ First public-ready release under the **Rail Junctions** name.
 - Includes working minecart routing/stopping behavior for all four custom rails.
 - Stops minecarts before incorrectly aligned Switch/Tee routes.
 - Includes vanilla-style fallback models and item icons.
+- Gives the fallback Dead End an oak-plank upper crossbar.
+- Improves the Dead End inventory/hotbar view so the buffer stop and approach track are easier to recognize.
 - Supports the separately installed RAY's 3D Rails resource pack.
 - Includes standard vanilla crafting recipes and recipe-book unlocks.
 - Uses the stable internal mod ID `railmod` for compatibility with existing worlds and resources.
 - Includes complete LGPL-3.0 / Apache-2.0 attribution and source availability information.
+- Held-item positioning for some 3D rail pieces is planned for further visual refinement in a later update.
 
 **Required:** Fabric API  
 **Minecraft:** 26.2  
