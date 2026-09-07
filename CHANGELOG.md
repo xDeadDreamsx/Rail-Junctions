@@ -2,6 +2,17 @@
 
 All notable changes to Rail Mod are documented here.
 
+## 1.0.4
+
+- Prepared the project for public distribution.
+- Added LGPL-3.0-only project licensing and the incorporated GPLv3 text.
+- Added detailed Little Logistics, Useful Railroads, and RAY's 3D Rails attribution/compatibility notices.
+- Added the Useful Railroads Apache-2.0 license to the distribution.
+- Added modification/source notices to the four upstream-derived/reimplemented rail block classes.
+- Embedded license and third-party notice files in published JARs under `META-INF/`.
+- Expanded Fabric metadata, README documentation, contribution guidance, and the GitHub bug-report template.
+- No gameplay, recipe, or rendering behavior changed from 1.0.3.
+
 ## 1.0.3
 
 - Moved the four crafting recipes out of the Redstone recipe-book category so they appear with the vanilla rail/equipment recipes while keeping the blocks in the Redstone creative tab.
