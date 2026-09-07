@@ -1,18 +1,18 @@
 name: Bug report
-description: Report a Rail Mod bug or compatibility issue
+description: Report a Rail Junctions bug or compatibility issue
 title: "[Bug] "
 labels: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a Rail Mod issue. Please fill in the details below.
+        Thanks for reporting a Rail Junctions issue. Please fill in the details below.
 
   - type: input
     id: railmod-version
     attributes:
-      label: Rail Mod version
-      placeholder: "e.g. 1.0.4"
+      label: Rail Junctions version
+      placeholder: "e.g. 1.0.5"
     validations:
       required: true
 
@@ -80,7 +80,7 @@ body:
     attributes:
       label: Checks
       options:
-        - label: I am using the newest available Rail Mod build for my Minecraft version.
+        - label: I am using the newest available Rail Junctions build for my Minecraft version.
           required: true
-        - label: I checked that an older Rail Mod JAR is not still present in the mods folder.
+        - label: I checked that an older Rail Junctions / Rail Mod JAR is not still present in the mods folder.
           required: true
