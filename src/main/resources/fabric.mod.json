@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "railmod",
   "version": "${version}",
-  "name": "Rail Mod",
-  "description": "Four standalone functional rail blocks for Fabric 26.2 with optional RAY's 3D Rails compatibility.",
+  "name": "Rail Junctions",
+  "description": "Vanilla-style rail switches, T-junctions, crossings and buffer stops for Fabric 26.2, with optional RAY's 3D Rails compatibility.",
   "authors": [
     "xDeadDreamsx"
   ],
