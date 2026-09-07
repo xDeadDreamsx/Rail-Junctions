@@ -1,8 +1,10 @@
-# Rail Mod
+# Rail Junctions
 
 [![Build](https://github.com/xDeadDreamsx/Rail-Mod/actions/workflows/build.yml/badge.svg)](https://github.com/xDeadDreamsx/Rail-Mod/actions/workflows/build.yml)
 
-**Rail Mod** is a small standalone Fabric mod for **Minecraft Java Edition 26.2** that adds four functional rail blocks without requiring Little Logistics, Useful Railroads, or U-Team-Core at runtime.
+**Rail Junctions** is a small standalone Fabric mod for **Minecraft Java Edition 26.2** that adds four functional vanilla-style rail pieces without requiring Little Logistics, Useful Railroads, or U-Team-Core at runtime.
+
+The project was developed under the working title **Rail Mod**. Its internal mod ID remains `railmod` so existing worlds, registry IDs, recipes, and resource-pack compatibility are not broken by the public-facing rename.
 
 ## Features
 
@@ -28,7 +30,7 @@ Little Logistics, Useful Railroads, U-Team-Core, JEI, and RAY's 3D Rails are **n
 
 1. Install Fabric Loader for Minecraft 26.2.
 2. Install Fabric API.
-3. Put the Rail Mod `.jar` into the Minecraft `mods` folder.
+3. Put the `rail-junctions-*.jar` file into the Minecraft `mods` folder.
 4. Optional: enable RAY's 3D Rails as a resource pack for the supported 3D models.
 
 ## Crafting recipes
@@ -79,9 +81,9 @@ The recipes are registered as standard Minecraft crafting recipes, are unlockabl
 
 ## RAY's 3D Rails compatibility
 
-Rail Mod intentionally provides compatibility model identifiers matching the Little Logistics and Useful Railroads models that **RAY's 3D Rails** already overrides. Rail Mod ships lightweight fallback JSON models using vanilla texture references; when RAY's 3D Rails is enabled, its separately installed 3D models replace those fallbacks.
+Rail Junctions intentionally provides compatibility model identifiers matching the Little Logistics and Useful Railroads models that **RAY's 3D Rails** already overrides. Rail Junctions ships lightweight fallback JSON models using vanilla texture references; when RAY's 3D Rails is enabled, its separately installed 3D models replace those fallbacks.
 
-RAY's 3D Rails is **not bundled** with Rail Mod and remains a separate project:
+RAY's 3D Rails is **not bundled** with Rail Junctions and remains a separate project:
 
 - https://modrinth.com/resourcepack/rays-3d-rails
 - https://github.com/xR4YM0ND/RAYs-3D-Rails
@@ -101,11 +103,11 @@ Build with:
 gradle build
 ```
 
-The mod JAR is produced under `build/libs/`.
+The release JAR is produced under `build/libs/` as `rail-junctions-<version>.jar`.
 
 ## License and attribution
 
-Rail Mod is distributed under **LGPL-3.0-only**. See:
+Rail Junctions is distributed under **LGPL-3.0-only**. See:
 
 - [`LICENSE`](LICENSE) — GNU Lesser General Public License v3.0
 - [`COPYING`](COPYING) — GNU General Public License v3.0 incorporated by LGPLv3
@@ -115,10 +117,14 @@ Rail Mod is distributed under **LGPL-3.0-only**. See:
 
 The Switch and Tee Junction implementations are adapted/reimplemented from Java behavior in **Little Logistics** (LGPL-3.0). The Rail Cross and Dead End are adapted/reimplemented from behavior in **Useful Railroads** (Apache-2.0). No original art assets from either mod are bundled.
 
-Rail Mod is an independent third-party project. It is not an official port and is not affiliated with or endorsed by Little Logistics, Useful Railroads/U-Team, RAY's 3D Rails, Mojang, or Microsoft.
+Rail Junctions is an independent third-party project. It is not an official port and is not affiliated with or endorsed by Little Logistics, Useful Railroads/U-Team, RAY's 3D Rails, Mojang, or Microsoft.
 
 ## Issues
 
 Bug reports and compatibility issues can be opened on the GitHub issue tracker:
 
 https://github.com/xDeadDreamsx/Rail-Mod/issues
+
+## Publishing information
+
+The repository includes [`MODRINTH.md`](MODRINTH.md) with the recommended Modrinth project metadata, description, dependency settings, and release notes for the current public build.
