@@ -1,7 +1,10 @@
 package dev.deaddreams.railmod.util;
 
 import dev.deaddreams.railmod.ModBlocks;
+import dev.deaddreams.railmod.block.DeadEndBlock;
 import dev.deaddreams.railmod.block.RailCrossBlock;
+import dev.deaddreams.railmod.block.RailSwitchBlock;
+import dev.deaddreams.railmod.block.TeeJunctionRailBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -14,6 +17,7 @@ import net.minecraft.world.phys.Vec3;
 
 public final class MinecartRailHooks {
     private static final double MIN_MOTION = 1.0E-4;
+    private static final double DEAD_END_STOP_OFFSET = 0.30;
 
     private MinecartRailHooks() {
     }
@@ -29,10 +33,16 @@ public final class MinecartRailHooks {
                 : RailShape.NORTH_SOUTH;
 
         BlockPos current = cart.blockPosition();
+        Direction travel = dominantDirection(motion);
+
+        if (travel != null && isMisalignedJunctionAhead(level, current, travel)) {
+            cart.setDeltaMovement(Vec3.ZERO);
+            return;
+        }
+
         prepareCross(level, current, desired);
         prepareCross(level, current.below(), desired);
 
-        Direction travel = dominantDirection(motion);
         if (travel != null) {
             prepareCross(level, current.relative(travel), desired);
             prepareCross(level, current.relative(travel).below(), desired);
@@ -40,10 +50,71 @@ public final class MinecartRailHooks {
     }
 
     public static void stopAtDeadEnd(ServerLevel level, AbstractMinecart cart) {
-        BlockPos current = cart.blockPosition();
-        if (isDeadEnd(level.getBlockState(current)) || isDeadEnd(level.getBlockState(current.below()))) {
-            cart.setDeltaMovement(Vec3.ZERO);
+        DeadEndHit hit = findDeadEnd(level, cart.blockPosition());
+        if (hit == null) {
+            return;
         }
+
+        Direction bufferSide = hit.state().getValue(DeadEndBlock.FACING);
+        Direction awayFromBuffer = bufferSide.getOpposite();
+
+        double x = hit.pos().getX() + 0.5 + awayFromBuffer.getStepX() * DEAD_END_STOP_OFFSET;
+        double z = hit.pos().getZ() + 0.5 + awayFromBuffer.getStepZ() * DEAD_END_STOP_OFFSET;
+
+        cart.setDeltaMovement(Vec3.ZERO);
+        cart.setPos(x, cart.getY(), z);
+    }
+
+    private static boolean isMisalignedJunctionAhead(ServerLevel level, BlockPos current, Direction travel) {
+        BlockPos next = current.relative(travel);
+        BlockState state = level.getBlockState(next);
+        if (!isSwitchOrTee(state)) {
+            state = level.getBlockState(next.below());
+        }
+
+        RailShape shape;
+        if (state.is(ModBlocks.RAIL_SWITCH)) {
+            shape = state.getValue(RailSwitchBlock.SHAPE);
+        } else if (state.is(ModBlocks.TEE_JUNCTION_RAIL)) {
+            shape = state.getValue(TeeJunctionRailBlock.SHAPE);
+        } else {
+            return false;
+        }
+
+        Direction entrySide = travel.getOpposite();
+        return !shapeConnectsTo(shape, entrySide);
+    }
+
+    private static boolean shapeConnectsTo(RailShape shape, Direction side) {
+        return switch (shape) {
+            case NORTH_SOUTH, ASCENDING_NORTH, ASCENDING_SOUTH ->
+                    side == Direction.NORTH || side == Direction.SOUTH;
+            case EAST_WEST, ASCENDING_EAST, ASCENDING_WEST ->
+                    side == Direction.EAST || side == Direction.WEST;
+            case SOUTH_EAST -> side == Direction.SOUTH || side == Direction.EAST;
+            case SOUTH_WEST -> side == Direction.SOUTH || side == Direction.WEST;
+            case NORTH_WEST -> side == Direction.NORTH || side == Direction.WEST;
+            case NORTH_EAST -> side == Direction.NORTH || side == Direction.EAST;
+        };
+    }
+
+    private static boolean isSwitchOrTee(BlockState state) {
+        return state.is(ModBlocks.RAIL_SWITCH) || state.is(ModBlocks.TEE_JUNCTION_RAIL);
+    }
+
+    private static DeadEndHit findDeadEnd(ServerLevel level, BlockPos current) {
+        BlockState state = level.getBlockState(current);
+        if (state.is(ModBlocks.DEAD_END)) {
+            return new DeadEndHit(current, state);
+        }
+
+        BlockPos below = current.below();
+        state = level.getBlockState(below);
+        if (state.is(ModBlocks.DEAD_END)) {
+            return new DeadEndHit(below, state);
+        }
+
+        return null;
     }
 
     private static void prepareCross(ServerLevel level, BlockPos pos, RailShape desired) {
@@ -51,10 +122,6 @@ public final class MinecartRailHooks {
         if (state.is(ModBlocks.RAIL_CROSS) && state.getValue(RailCrossBlock.SHAPE) != desired) {
             level.setBlock(pos, state.setValue(RailCrossBlock.SHAPE, desired), Block.UPDATE_CLIENTS);
         }
-    }
-
-    private static boolean isDeadEnd(BlockState state) {
-        return state.is(ModBlocks.DEAD_END);
     }
 
     private static Direction dominantDirection(Vec3 motion) {
@@ -69,5 +136,8 @@ public final class MinecartRailHooks {
             return null;
         }
         return motion.z() > 0 ? Direction.SOUTH : Direction.NORTH;
+    }
+
+    private record DeadEndHit(BlockPos pos, BlockState state) {
     }
 }

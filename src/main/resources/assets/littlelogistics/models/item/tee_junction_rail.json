@@ -1,3 +1,7 @@
 {
-  "parent": "littlelogistics:block/tee_junction_rail_off"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:block/rail",
+    "layer1": "minecraft:block/rail_corner"
+  }
 }
