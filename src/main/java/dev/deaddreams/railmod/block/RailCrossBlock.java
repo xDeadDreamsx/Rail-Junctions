@@ -1,3 +1,10 @@
+/*
+ * SPDX-License-Identifier: LGPL-3.0-only
+ *
+ * Adapted/reimplemented for Rail Mod from the intersection-rail behavior in Useful Railroads.
+ * Modified for Fabric / Minecraft 26.2 on 2026-09-07.
+ * See THIRD_PARTY.md and THIRD_PARTY_LICENSES/Useful-Railroads-Apache-2.0.txt.
+ */
 package dev.deaddreams.railmod.block;
 
 import com.mojang.serialization.MapCodec;
