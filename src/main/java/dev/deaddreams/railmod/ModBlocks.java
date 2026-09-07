@@ -7,7 +7,7 @@ import dev.deaddreams.railmod.block.RailCrossBlock;
 import dev.deaddreams.railmod.block.RailSwitchBlock;
 import dev.deaddreams.railmod.block.TeeJunctionRailBlock;
 
-import net.fabricmc.fabric.api.itemgroup.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
