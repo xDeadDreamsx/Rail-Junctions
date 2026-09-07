@@ -3,6 +3,7 @@
   "textures": {
     "rail": "minecraft:block/rail",
     "iron": "minecraft:block/iron_block",
+    "wood": "minecraft:block/oak_planks",
     "particle": "minecraft:block/iron_block"
   },
   "elements": [
@@ -40,12 +41,12 @@
       "from": [1, 8, 1],
       "to": [15, 11, 3],
       "faces": {
-        "north": { "texture": "#iron" },
-        "east": { "texture": "#iron" },
-        "south": { "texture": "#iron" },
-        "west": { "texture": "#iron" },
-        "up": { "texture": "#iron" },
-        "down": { "texture": "#iron" }
+        "north": { "texture": "#wood" },
+        "east": { "texture": "#wood" },
+        "south": { "texture": "#wood" },
+        "west": { "texture": "#wood" },
+        "up": { "texture": "#wood" },
+        "down": { "texture": "#wood" }
       }
     }
   ]
