@@ -1,13 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "redstone",
   "key": {
-    "B": {
-      "item": "minecraft:iron_block"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    }
+    "B": { "item": "minecraft:iron_block" },
+    "I": { "item": "minecraft:iron_ingot" }
   },
   "pattern": [
     "III",
