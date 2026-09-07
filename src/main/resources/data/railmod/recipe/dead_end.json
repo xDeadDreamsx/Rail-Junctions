@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
   "key": {
-    "B": "minecraft:iron_block",
-    "I": "minecraft:iron_ingot"
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "III",
-    " B ",
-    "I I"
+    "S S",
+    "ISI"
   ],
   "result": {
-    "count": 2,
+    "count": 4,
     "id": "railmod:dead_end"
   }
 }
