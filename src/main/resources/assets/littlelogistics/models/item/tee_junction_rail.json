@@ -1,7 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:block/rail",
-    "layer1": "minecraft:block/rail_corner"
+    "layer0": "minecraft:block/rail_corner"
   }
 }

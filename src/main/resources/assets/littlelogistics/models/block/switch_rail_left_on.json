@@ -1,27 +1,17 @@
 {
   "ambientocclusion": false,
   "textures": {
-    "straight": "minecraft:block/rail",
     "curve": "minecraft:block/rail_corner",
     "particle": "minecraft:block/rail"
   },
   "elements": [
     {
-      "from": [0, 0.0625, 0],
-      "to": [16, 0.0625, 16],
-      "shade": false,
-      "faces": {
-        "up": { "uv": [0, 0, 16, 16], "texture": "#straight" },
-        "down": { "uv": [0, 0, 16, 16], "texture": "#straight" }
-      }
-    },
-    {
-      "from": [0, 0.07, 0],
-      "to": [16, 0.07, 16],
+      "from": [0, 1, 0],
+      "to": [16, 1, 16],
       "shade": false,
       "faces": {
         "up": { "uv": [0, 0, 16, 16], "texture": "#curve", "rotation": 90 },
-        "down": { "uv": [0, 0, 16, 16], "texture": "#curve", "rotation": 90 }
+        "down": { "uv": [0, 16, 16, 0], "texture": "#curve", "rotation": 90 }
       }
     }
   ]

@@ -17,7 +17,10 @@ import net.minecraft.world.phys.Vec3;
 
 public final class MinecartRailHooks {
     private static final double MIN_MOTION = 1.0E-4;
-    private static final double DEAD_END_STOP_OFFSET = 0.30;
+    // The bumper sits on the FACING edge of the dead-end block. A minecart is
+    // roughly one block long, so centering it one block out from the dead-end
+    // center leaves its nose right at the bumper instead of inside it.
+    private static final double DEAD_END_STOP_OFFSET = 1.0;
 
     private MinecartRailHooks() {
     }
@@ -55,11 +58,9 @@ public final class MinecartRailHooks {
             return;
         }
 
-        Direction bufferSide = hit.state().getValue(DeadEndBlock.FACING);
-        Direction awayFromBuffer = bufferSide.getOpposite();
-
-        double x = hit.pos().getX() + 0.5 + awayFromBuffer.getStepX() * DEAD_END_STOP_OFFSET;
-        double z = hit.pos().getZ() + 0.5 + awayFromBuffer.getStepZ() * DEAD_END_STOP_OFFSET;
+        Direction bumperSide = hit.state().getValue(DeadEndBlock.FACING);
+        double x = hit.pos().getX() + 0.5 + bumperSide.getStepX() * DEAD_END_STOP_OFFSET;
+        double z = hit.pos().getZ() + 0.5 + bumperSide.getStepZ() * DEAD_END_STOP_OFFSET;
 
         cart.setDeltaMovement(Vec3.ZERO);
         cart.setPos(x, cart.getY(), z);
