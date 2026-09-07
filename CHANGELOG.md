@@ -10,7 +10,9 @@ All notable changes to Rail Junctions are documented here.
 - Finalized public-release documentation and Modrinth publishing metadata.
 - Added exact upstream reference commits to the third-party attribution notes.
 - Confirmed the referenced Useful Railroads 1.21.1 repository root has no separate upstream `NOTICE` file beyond its `LICENSE`.
-- No gameplay, recipe, registry, world-data, or rendering behavior changed from 1.0.4.
+- Updated the vanilla fallback Dead End so its upper crossbar uses the oak-plank texture.
+- Added a dedicated GUI presentation for the Dead End so its inventory/hotbar icon shows the buffer stop and approach track more clearly.
+- Kept the existing held-item transforms unchanged for now; first-person/third-person positioning is planned for later visual refinement.
 
 ## 1.0.4
 
