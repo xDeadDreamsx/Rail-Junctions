@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:rail"
+    }
+  },
+  "pattern": [
+    "###",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "id": "railmod:tee_junction_rail"
+  }
+}

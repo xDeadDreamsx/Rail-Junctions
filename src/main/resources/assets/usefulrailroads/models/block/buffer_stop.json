@@ -1,0 +1,52 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "rail": "minecraft:block/rail",
+    "iron": "minecraft:block/iron_block",
+    "particle": "minecraft:block/iron_block"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 1, 16],
+      "faces": {
+        "up": { "texture": "#rail" },
+        "down": { "texture": "#rail" }
+      }
+    },
+    {
+      "from": [2, 1, 1],
+      "to": [4, 10, 3],
+      "faces": {
+        "north": { "texture": "#iron" },
+        "east": { "texture": "#iron" },
+        "south": { "texture": "#iron" },
+        "west": { "texture": "#iron" },
+        "up": { "texture": "#iron" }
+      }
+    },
+    {
+      "from": [12, 1, 1],
+      "to": [14, 10, 3],
+      "faces": {
+        "north": { "texture": "#iron" },
+        "east": { "texture": "#iron" },
+        "south": { "texture": "#iron" },
+        "west": { "texture": "#iron" },
+        "up": { "texture": "#iron" }
+      }
+    },
+    {
+      "from": [1, 8, 1],
+      "to": [15, 11, 3],
+      "faces": {
+        "north": { "texture": "#iron" },
+        "east": { "texture": "#iron" },
+        "south": { "texture": "#iron" },
+        "west": { "texture": "#iron" },
+        "up": { "texture": "#iron" },
+        "down": { "texture": "#iron" }
+      }
+    }
+  ]
+}
