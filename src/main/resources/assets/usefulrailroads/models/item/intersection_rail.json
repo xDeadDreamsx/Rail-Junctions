@@ -1,5 +1,6 @@
 {
   "ambientocclusion": false,
+  "gui_light": "front",
   "textures": {
     "rail": "minecraft:block/rail",
     "particle": "minecraft:block/rail"
