@@ -61,6 +61,6 @@ Rail Junctions is a third-party Minecraft mod. Minecraft is developed by Mojang 
 
 The complete corresponding source for published Rail Junctions builds is this repository:
 
-https://github.com/xDeadDreamsx/Rail-Mod
+https://github.com/xDeadDreamsx/Rail-Junctions
 
 See `LICENSE` (LGPL-3.0) and `COPYING` (GPL-3.0, incorporated by LGPL-3.0) for the project license terms.
