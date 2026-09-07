@@ -1,55 +1,25 @@
 # Changelog
 
-All notable changes to Rail Junctions are documented here.
+All notable public changes to Rail Junctions are documented here.
 
-## 1.0.5
+## 1.0.0 — First public release
 
-- Renamed the public-facing project from **Rail Mod** to **Rail Junctions**.
-- Kept the internal mod ID `railmod` unchanged for save, registry, recipe, and resource-pack compatibility.
-- Renamed release artifacts to `rail-junctions-<version>.jar`.
-- Finalized public-release documentation and Modrinth publishing metadata.
-- Added exact upstream reference commits to the third-party attribution notes.
-- Confirmed the referenced Useful Railroads 1.21.1 repository root has no separate upstream `NOTICE` file beyond its `LICENSE`.
-- Updated the vanilla fallback Dead End so its upper crossbar uses the oak-plank texture.
-- Added a dedicated GUI presentation for the Dead End so its inventory/hotbar icon shows the buffer stop and approach track more clearly.
-- Kept the existing held-item transforms unchanged for now; first-person/third-person positioning is planned for later visual refinement.
+- Adds Rail Cross, Dead End, Rail Switch, and Tee Junction Rail for Fabric / Minecraft 26.2.
+- Adds minecart routing and stopping behavior for all four custom rail pieces.
+- Stops minecarts before incorrectly aligned Rail Switch and Tee Junction routes instead of letting them slide off the track.
+- Adds directional Dead End stopping.
+- Includes standard vanilla crafting recipes and vanilla recipe-book unlocks.
+- Places the custom rail recipes with the vanilla rail/equipment recipes while keeping the blocks in the Redstone creative tab.
+- Rail Cross recipe returns 5 Rail Crosses; Dead End recipe returns 4 Dead Ends; Rail Switch and Tee Junction Rail recipes return 4 blocks each.
+- Includes lightweight vanilla-style fallback block and item models.
+- Updates the fallback Dead End with an oak-plank upper crossbar and metal supports that end cleanly beneath it instead of overlapping the wood.
+- Adds a flatter, front-facing Dead End inventory/hotbar icon that fills the slot more clearly and stays closer to Minecraft's vanilla 2D item style.
+- Supports the separately installed RAY's 3D Rails resource pack for compatible 3D models.
+- Removes runtime dependencies on Little Logistics, Useful Railroads, and U-Team-Core.
+- Uses the stable internal mod ID `railmod` for compatibility with existing worlds and resources.
+- Includes LGPL-3.0-only project licensing, Apache-2.0 attribution for Useful Railroads-derived material, source references, and bundled third-party license notices.
+- First-person and third-person held-item positioning for some 3D rail pieces is planned for further visual refinement in a future update.
 
-## 1.0.4
+### Development note
 
-- Prepared the project for public distribution under its former working title **Rail Mod**.
-- Added LGPL-3.0-only project licensing and the incorporated GPLv3 text.
-- Added detailed Little Logistics, Useful Railroads, and RAY's 3D Rails attribution/compatibility notices.
-- Added the Useful Railroads Apache-2.0 license to the distribution.
-- Added modification/source notices to the four upstream-derived/reimplemented rail block classes.
-- Embedded license and third-party notice files in published JARs under `META-INF/`.
-- Expanded Fabric metadata, README documentation, contribution guidance, and the GitHub bug-report template.
-- No gameplay, recipe, or rendering behavior changed from 1.0.3.
-
-## 1.0.3
-
-- Moved the four crafting recipes out of the Redstone recipe-book category so they appear with the vanilla rail/equipment recipes while keeping the blocks in the Redstone creative tab.
-- Changed the Dead End recipe to use iron ingots and sticks and return 4 Dead Ends.
-- Changed the Rail Cross recipe to use 5 vanilla Rails in a cross pattern and return 5 Rail Crosses.
-- Kept Rail Switch and Tee Junction Rail recipes at 4 output.
-
-## 1.0.2
-
-- Updated all crafting recipe ingredient JSON to the Minecraft 26.2 format.
-- Fixed recipes being silently skipped by Minecraft's recipe manager.
-- Added CI detection for Rail Junctions recipe/data parsing failures.
-
-## 1.0.1
-
-- Added vanilla recipe-book unlock advancements.
-- Added recipe-viewer compatibility through standard vanilla crafting recipes (including JEI-compatible discovery).
-
-## 1.0.0
-
-- First stable feature release for Fabric / Minecraft 26.2 under the original working title Rail Mod.
-- Added Rail Cross, Dead End, Rail Switch, and Tee Junction Rail.
-- Added minecart routing/stop logic for custom rails.
-- Added stopping before incorrectly aligned Rail Switch and Tee Junction routes.
-- Added directional Dead End stopping.
-- Added vanilla-style fallback block/item models.
-- Added compatibility with the separately installed RAY's 3D Rails resource pack.
-- Removed runtime dependencies on Little Logistics, Useful Railroads, and U-Team-Core.
+Internal pre-release builds used incremental `1.0.1`–`1.0.5` version numbers while recipes, metadata, licensing, and visuals were being finalized. None of those builds were published on Modrinth. The first public Modrinth version is therefore `1.0.0`.
