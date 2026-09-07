@@ -1,12 +1,61 @@
-# Third-party reference implementations
+# Third-party notices
 
-Rail Mod is an independent Fabric implementation inspired by the behavior of:
+Rail Mod is a standalone Fabric mod distributed under **LGPL-3.0-only**. The project is not an official port of, and is not affiliated with or endorsed by, Little Logistics, Useful Railroads, U-Team, RAY's 3D Rails, Mojang, or Microsoft.
 
-- **Little Logistics** by Murad Akhundov and contributors — rail switch and tee junction behavior.
-  The Java source in the referenced project is distributed under LGPL-3.0.
-- **Useful Railroads** by U-Team — intersection rail and buffer-stop behavior.
-  Useful Railroads is distributed under Apache-2.0.
+This document records the upstream projects whose code/behavior was used as a reference during development and explains which material is and is not redistributed.
 
-No original textures from either mod are bundled here. The fallback resources in this repository use
-Minecraft's vanilla rail/iron textures. The resource identifiers used for the four fallback models are
-intentionally compatible with the corresponding overrides in RAYs 3D Rails.
+## Little Logistics
+
+- Project: **Little Logistics** by Murad Akhundov and contributors
+- Repository: https://github.com/MuradAkh/LittleLogistics
+- Reference branch/version family: `main-1.21.1`
+- Relevant upstream Java sources include:
+  - `src/main/java/dev/murad/shipping/block/rail/SwitchRail.java`
+  - `src/main/java/dev/murad/shipping/block/rail/TeeJunctionRail.java`
+- Upstream license: **GNU Lesser General Public License v3.0** for `.java` files. The upstream LICENSE explicitly states that its LGPL terms cover Java files only.
+
+Rail Mod's `RailSwitchBlock.java` and `TeeJunctionRailBlock.java` are modified/reimplemented Fabric 26.2 implementations based on those rail behaviors. The corresponding Rail Mod source files carry modification/attribution notices and are distributed under LGPL-3.0-only.
+
+**No Little Logistics textures, models, sounds, logos, or other non-Java assets are bundled in Rail Mod.**
+
+## Useful Railroads
+
+- Project: **Useful Railroads** by U-Team
+- Repository: https://github.com/MC-U-Team/Useful-Railroads
+- Reference version family: `1.21.1`
+- Relevant upstream implementations include:
+  - `IntersectionRailBlock.java`
+  - `BufferStopBlock.java`
+- Upstream license: **Apache License 2.0**
+- Upstream copyright notice: `Copyright 2017-2025 U-Team (https://u-team.info)`
+
+Rail Mod's `RailCrossBlock.java` and `DeadEndBlock.java` are modified/reimplemented Fabric 26.2 implementations based on those rail behaviors. The Dead End intentionally omits Useful Railroads' redstone/inventory/minecart-destruction functionality and only acts as a directional buffer stop.
+
+A verbatim copy of the Useful Railroads Apache-2.0 license is included at:
+
+`THIRD_PARTY_LICENSES/Useful-Railroads-Apache-2.0.txt`
+
+**No Useful Railroads textures, models, sounds, logos, or other art assets are bundled in Rail Mod.**
+
+## RAY's 3D Rails
+
+- Project: **RAY's 3D Rails** by xR4YM0ND
+- Repository: https://github.com/xR4YM0ND/RAYs-3D-Rails
+- Modrinth: https://modrinth.com/resourcepack/rays-3d-rails
+- License: **MIT**
+
+Rail Mod contains compatibility shims so that the separately installed RAY's 3D Rails resource pack can override the four rail models. Rail Mod does **not** bundle or redistribute RAY's textures or 3D models.
+
+To provide this compatibility, Rail Mod ships newly created lightweight fallback model JSON files under the `littlelogistics` and `usefulrailroads` resource namespaces. These fallback files use Minecraft vanilla texture/model references and intentionally reuse model identifiers recognized by RAY's 3D Rails. They are compatibility resources created for Rail Mod, not copied upstream art assets.
+
+## Minecraft / Fabric
+
+Rail Mod is a third-party Minecraft mod. Minecraft is developed by Mojang Studios and published by Microsoft. Fabric Loader and Fabric API are external runtime/build dependencies and are not bundled as source code in this repository.
+
+## Source availability
+
+The complete corresponding source for published Rail Mod builds is this repository:
+
+https://github.com/xDeadDreamsx/Rail-Mod
+
+See `LICENSE` (LGPL-3.0) and `COPYING` (GPL-3.0, incorporated by LGPL-3.0) for the project license terms.
