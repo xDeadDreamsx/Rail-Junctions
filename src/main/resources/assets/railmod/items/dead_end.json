@@ -7,7 +7,7 @@
         "when": "gui",
         "model": {
           "type": "minecraft:model",
-          "model": "usefulrailroads:item/buffer_stop"
+          "model": "railmod:item/dead_end_gui"
         }
       }
     ],

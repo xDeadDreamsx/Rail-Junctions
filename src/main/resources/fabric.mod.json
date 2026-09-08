@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "dev.deaddreams.railmod.RailMod"
+    ],
+    "client": [
+      "dev.deaddreams.railmod.client.RailModClient"
     ]
   },
   "mixins": [

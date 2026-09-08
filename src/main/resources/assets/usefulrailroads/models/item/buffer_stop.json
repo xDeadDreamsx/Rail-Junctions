@@ -1,3 +1,3 @@
 {
-  "parent": "railmod:item/dead_end_gui"
+  "parent": "usefulrailroads:block/buffer_stop"
 }
