@@ -12,7 +12,7 @@ body:
     id: railmod-version
     attributes:
       label: Rail Junctions version
-      placeholder: "e.g. 1.0.5"
+      placeholder: "e.g. 1.0"
     validations:
       required: true
 
