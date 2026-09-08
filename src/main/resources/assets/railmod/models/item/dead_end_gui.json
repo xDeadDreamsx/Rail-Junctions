@@ -1,51 +1,6 @@
 {
-  "ambientocclusion": false,
-  "gui_light": "front",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "rail": "minecraft:block/rail",
-    "iron": "minecraft:block/iron_block",
-    "wood": "minecraft:block/oak_planks",
-    "particle": "minecraft:block/rail"
-  },
-  "elements": [
-    {
-      "from": [0, 0, 7.9],
-      "to": [16, 16, 8.1],
-      "faces": {
-        "north": { "texture": "#rail" },
-        "south": { "texture": "#rail" }
-      }
-    },
-    {
-      "from": [1, 12, 8.15],
-      "to": [15, 14, 8.35],
-      "faces": {
-        "north": { "texture": "#wood" },
-        "south": { "texture": "#wood" }
-      }
-    },
-    {
-      "from": [2, 5, 8.15],
-      "to": [3, 12, 8.35],
-      "faces": {
-        "north": { "texture": "#iron" },
-        "south": { "texture": "#iron" }
-      }
-    },
-    {
-      "from": [13, 5, 8.15],
-      "to": [14, 12, 8.35],
-      "faces": {
-        "north": { "texture": "#iron" },
-        "south": { "texture": "#iron" }
-      }
-    }
-  ],
-  "display": {
-    "gui": {
-      "rotation": [0, 180, 0],
-      "translation": [0, 0, 0],
-      "scale": [1.0, 1.0, 1.0]
-    }
+    "layer0": "railmod:item/dead_end_gui"
   }
 }
